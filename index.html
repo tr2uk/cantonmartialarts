@@ -36,8 +36,8 @@
 
         /* HERO SECTION */
         .hero {
-            /* Arka plana martial arts texturesi ekledim */
-            background: linear-gradient(rgba(0,31,63,0.9), rgba(0,0,0,0.8)), url('big_logo.jpg');
+            /* Arka planı biraz karartıyoruz ki beyaz yazılar okunsun */
+            background: linear-gradient(rgba(0,31,63,0.9), rgba(0,0,0,0.7)), url('big_logo.jpg');
             background-size: cover; background-position: center; height: 60vh;
             display: flex; flex-direction: column; justify-content: center; align-items: center;
             text-align: center; color: white; padding: 20px;
@@ -52,7 +52,7 @@
         }
         .btn:hover { background-color: white; color: var(--canton-red); }
 
-        /* DOJO LOGOS GRID */
+        /* DOJO LOGOS GRID - Görseller buraya gelecek */
         .dojo-grid {
             display: flex; justify-content: center; gap: 20px; flex-wrap: wrap;
             padding: 30px 20px; background: white; margin-top: -40px; 
@@ -69,55 +69,20 @@
         .section-title { text-align: center; font-size: 2.5rem; margin-bottom: 20px; color: var(--canton-black); position: relative; }
         .section-title::after { content: ''; display: block; width: 80px; height: 4px; background: var(--canton-red); margin: 15px auto; }
 
-        /* KAIZEN TEAM SECTION */
-        .kaizen-container {
-            display: flex; flex-wrap: wrap; justify-content: center; gap: 30px; margin-top: 40px;
+        /* CORE VALUES GRID (5 Pillars) */
+        .values-container { text-align: center; margin-bottom: 50px; }
+        .values-grid {
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin-top: 40px;
         }
-        .kaizen-card {
-            background: white; border-radius: 10px; padding: 30px; width: 250px; text-align: center;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05); border-top: 5px solid #555; transition: 0.3s;
+        .value-card {
+            background: white; padding: 30px 20px; border-radius: 10px; text-align: center;
+            border-top: 5px solid var(--canton-navy); transition: 0.3s;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
         }
-        .kaizen-card:hover { transform: translateY(-5px); border-color: var(--canton-red); }
-        .k-role { font-size: 0.9rem; text-transform: uppercase; color: #888; letter-spacing: 1px; margin-bottom: 10px; }
-        .k-name { font-family: 'Oswald', sans-serif; font-size: 1.4rem; color: var(--canton-navy); margin-bottom: 5px; }
-        .k-icon { font-size: 2rem; color: var(--canton-red); margin-bottom: 15px; }
-
-        /* PATCH DESIGN (Realistic CSS) */
-        .patch-display {
-            background: #fff; padding: 40px; border-radius: 10px; text-align: center;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.1); margin-top: 30px;
-        }
-        .patch-preview { display: flex; justify-content: center; gap: 40px; flex-wrap: wrap; margin-top: 20px; }
-        
-        .patch {
-            /* Kumaş Dokusu Efekti */
-            background-color: #f0f0f0;
-            background-image: repeating-linear-gradient(45deg, transparent, transparent 1px, rgba(0,0,0,0.05) 1px, rgba(0,0,0,0.05) 2px);
-            display: flex; align-items: center; justify-content: center; flex-direction: column; 
-            text-align: center; font-family: 'Oswald', sans-serif; 
-            box-shadow: 4px 4px 8px rgba(0,0,0,0.3), inset 0 0 20px rgba(0,0,0,0.1);
-            position: relative;
-        }
-        /* Dikiş Efekti */
-        .patch::after {
-            content: ''; position: absolute; top: 5px; left: 5px; right: 5px; bottom: 5px;
-            border: 2px dashed rgba(255,255,255,0.6); pointer-events: none;
-        }
-        
-        .patch-round { 
-            width: 140px; height: 140px; border-radius: 50%; 
-            border: 6px solid var(--canton-navy); 
-            background: radial-gradient(circle, #fff 40%, #f4f4f4 100%);
-        }
-        .patch-square { 
-            width: 160px; height: 140px; border-radius: 8px; 
-            border: 6px solid var(--canton-navy); 
-            background: #fff;
-        }
-        
-        .p-voice { color: var(--canton-navy); font-weight: 700; font-size: 1.6rem; line-height: 1; letter-spacing: 1px; text-shadow: 1px 1px 0px rgba(0,0,0,0.1); }
-        .p-of { color: #888; font-weight: 300; font-size: 1rem; margin: 4px 0; font-family: 'Roboto', serif; font-style: italic;}
-        .p-canton { color: var(--canton-red); font-weight: 700; font-size: 2rem; line-height: 1; letter-spacing: 1px; text-shadow: 1px 1px 0px rgba(0,0,0,0.1); }
+        .value-card:hover { transform: translateY(-10px); border-color: var(--canton-red); }
+        .value-icon { font-size: 2.5rem; color: var(--canton-red); margin-bottom: 15px; }
+        .value-card h3 { margin: 10px 0; font-size: 1.3rem; color: var(--canton-navy); }
+        .value-card p { font-size: 0.95rem; color: #666; line-height: 1.5; }
 
         /* DEMO & FORM */
         .demo-container { display: flex; flex-wrap: wrap; gap: 40px; background: white; padding: 40px; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
@@ -125,7 +90,18 @@
         
         label { font-weight: bold; display: block; margin-bottom: 5px; color: #555; font-size: 0.9rem;}
         select, textarea, input[type="text"] { width: 100%; padding: 12px; margin-bottom: 20px; border: 2px solid #eee; border-radius: 5px; font-family: inherit; font-size: 1rem; background: #fff;}
+        select:disabled { background-color: #f8f9fa; color: #6c757d; cursor: not-allowed; border-color: #ddd; }
+        select:focus, textarea:focus { border-color: var(--canton-navy); outline: none; }
         
+        /* PATCH PREVIEW */
+        .patch-preview { display: flex; justify-content: center; gap: 20px; margin-bottom: 20px; }
+        .patch { background: #fff; border: 1px solid #ccc; display: flex; align-items: center; justify-content: center; flex-direction: column; text-align: center; font-family: 'Oswald', sans-serif; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+        .patch-round { width: 90px; height: 90px; border-radius: 50%; border: 4px solid var(--canton-navy); }
+        .patch-square { width: 100px; height: 90px; border-radius: 5px; border: 4px solid var(--canton-navy); }
+        .p-voice { color: var(--canton-navy); font-weight: 700; font-size: 1rem; line-height: 1; }
+        .p-of { color: #888; font-weight: 300; font-size: 0.7rem; margin: 2px 0; }
+        .p-canton { color: var(--canton-red); font-weight: 700; font-size: 1.2rem; line-height: 1; }
+
         /* STATUS BOX */
         .status-box {
             background: linear-gradient(to right, #fff3cd, #fff); border-left: 5px solid #ffc107;
@@ -133,6 +109,13 @@
             box-shadow: 0 5px 15px rgba(0,0,0,0.05);
         }
         
+        /* PILOT OFFER BOX */
+        .pilot-offer {
+            background: var(--canton-black); color: white; padding: 40px; 
+            border-radius: 10px; margin-top: 40px; text-align: center;
+            border: 1px solid #333;
+        }
+
         footer { background: var(--canton-navy); color: #ccc; text-align: center; padding: 40px; margin-top: 50px; font-size: 0.9rem;}
     </style>
 </head>
@@ -156,8 +139,8 @@
     <section class="hero">
         <h1>ONE CLUB. ONE VOICE.</h1>
         <p>
-            Applying the Japanese philosophy of <strong>"Kaizen"</strong> (Continuous Improvement) to our Dojo operations.
-            A centralised system to listen, improve, and grow.
+            Bridging the gap between tradition and innovation. A centralised system to listen to our students, 
+            support our community, and drive excellence across all Dojos.
         </p>
         <a href="#demo" class="btn">TRY THE CONCEPT DEMO</a>
     </section>
@@ -171,52 +154,53 @@
         <div class="dojo-item"><img src="tunbridge_wells.jpg" alt="Tunbridge Wells"><span class="dojo-name">Tunbridge Wells</span></div>
     </div>
 
-    <section id="kaizen">
-        <h2 class="section-title">THE KAIZEN TEAM</h2>
-        <p style="text-align: center; max-width: 700px; margin: 0 auto; color: #555;">
-            "Kaizen" (改善) means continuous improvement. This proposed structure ensures that every suggestion is analyzed, authorised, and implemented effectively.
-        </p>
+    <section id="values">
+        <div class="values-container">
+            <h2 class="section-title">BUILT ON OUR CORE VALUES</h2>
+            <p style="max-width: 700px; margin: 0 auto; font-size: 1.1rem; color: #555;">
+                The "Voice of Canton" initiative relies on close relationships and ownership of these 5 pillars. 
+                Technology is simply a tool to reinforce our culture.
+            </p>
+        </div>
         
-        <div class="kaizen-container">
-            <div class="kaizen-card">
-                <i class="fas fa-brain k-icon"></i>
-                <div class="k-role">Innovation Lead</div>
-                <div class="k-name">Assoc. Prof. Dr. Cetin Karakaya</div>
-                <p style="font-size:0.85rem; color:#666;">Data Analysis, Reporting & System Maintenance</p>
+        <div class="values-grid">
+            <div class="value-card">
+                <i class="fas fa-fire value-icon"></i>
+                <h3>SPIRIT</h3>
+                <p>We never give up, we never give in, we will always do our best.</p>
             </div>
-
-            <div class="kaizen-card" style="border-top-color: var(--canton-red);">
-                <i class="fas fa-gavel k-icon"></i>
-                <div class="k-role">Executive Sponsor</div>
-                <div class="k-name">Shihan Kigen (Richard Canton)</div>
-                <p style="font-size:0.85rem; color:#666;">Final Approval & Strategic Direction</p>
+            <div class="value-card">
+                <i class="fas fa-star value-icon"></i>
+                <h3>QUALITY</h3>
+                <p>Classes are engaging, evolving, applicable and inclusive so you receive exactly what you need.</p>
             </div>
-
-            <div class="kaizen-card">
-                <i class="fas fa-fist-raised k-icon"></i>
-                <div class="k-role">Operational Lead</div>
-                <div class="k-name">Doshi Luca Hale-Stretton</div>
-                <p style="font-size:0.85rem; color:#666;">Dojo Implementation & Instructor Coordination</p>
+            <div class="value-card">
+                <i class="fas fa-hand-holding-heart value-icon"></i>
+                <h3>SERVICE</h3>
+                <p>We will offer a premium experience through premium customer service.</p>
             </div>
-
-            <div class="kaizen-card">
-                <i class="fas fa-shield-alt k-icon"></i>
-                <div class="k-role">Welfare Officer</div>
-                <div class="k-name">Claire Canton</div>
-                <p style="font-size:0.85rem; color:#666;">Safeguarding Compliance & Oversight</p>
+            <div class="value-card">
+                <i class="fas fa-fist-raised value-icon"></i>
+                <h3>DEDICATION</h3>
+                <p>Our aim is to inspire others to become dedicated to their chosen sport.</p>
+            </div>
+            <div class="value-card">
+                <i class="fas fa-smile-beam value-icon"></i>
+                <h3>FUN</h3>
+                <p>We ensure you enjoy the journey, a smile on your face is what we want.</p>
             </div>
         </div>
     </section>
 
     <section id="strategy" style="background-color: #f9f9f9;">
-        <h2 class="section-title">THE VISUAL IDENTITY</h2>
+        <h2 class="section-title">THE VISION</h2>
         <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px;">
             
-            <div class="patch-display">
-                <h3 style="color: var(--canton-navy); margin-top:0;"><i class="fas fa-tag"></i> Official Member Patch</h3>
-                <p>Designed to be velcro-backed for easy application to Gi collars or Kit Bags.</p>
+            <div style="background: white; padding: 30px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.05);">
+                <h3 style="color: var(--canton-navy); margin-top:0;"><i class="fas fa-tshirt"></i> The "Patch" Model</h3>
+                <p>Allow students to wear comfortable, high-quality gear (WKF approved) by making the <strong>Canton Identity</strong> transferable.</p>
                 
-                <div class="patch-preview">
+                <div class="patch-preview" style="margin-top:20px;">
                     <div class="patch patch-round">
                         <div class="p-voice">VOICE</div>
                         <div class="p-of">of</div>
@@ -228,19 +212,15 @@
                         <div class="p-canton">CANTON</div>
                     </div>
                 </div>
-                <p style="font-size: 0.8rem; color: #888; margin-top:15px;">*Digital rendering of embroidered texture</p>
+                <p style="font-size: 0.8rem; text-align: center; color: #666; font-style: italic;">*Conceptual Velcro Design for Bags & Gis</p>
             </div>
 
-            <div style="background: white; padding: 40px; border-radius: 10px; box-shadow: 0 5px 20px rgba(0,0,0,0.05); display:flex; flex-direction: column; justify-content: center;">
-                <h3 style="color: var(--canton-navy);"><i class="fas fa-tasks"></i> Why "Kaizen"?</h3>
-                <p style="line-height: 1.6; color: #555;">
-                    In Martial Arts, we strive for perfection in every technique. Our club management should be no different. 
-                    The <strong>Voice of Canton</strong> portal is the digital dojo for our operations.
-                </p>
-                <ul style="margin-top: 20px; line-height: 2;">
-                    <li><i class="fas fa-check" style="color: var(--canton-red);"></i> <strong>Listen:</strong> Centralised feedback.</li>
-                    <li><i class="fas fa-check" style="color: var(--canton-red);"></i> <strong>Improve:</strong> Data-driven decisions.</li>
-                    <li><i class="fas fa-check" style="color: var(--canton-red);"></i> <strong>Empower:</strong> Giving students a voice.</li>
+            <div style="background: white; padding: 30px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.05);">
+                <h3 style="color: var(--canton-navy); margin-top:0;"><i class="fas fa-users-cog"></i> Smart Operations</h3>
+                <ul style="line-height: 2; list-style: none; padding: 0;">
+                    <li><i class="fas fa-check-circle" style="color:var(--canton-red)"></i> <strong>Financial Privacy:</strong> Requests route directly to Finance (Denise Hardy).</li>
+                    <li><i class="fas fa-check-circle" style="color:var(--canton-red)"></i> <strong>Safeguarding:</strong> Direct line to Welfare Officer (Claire Canton).</li>
+                    <li><i class="fas fa-check-circle" style="color:var(--canton-red)"></i> <strong>Operational Checks:</strong> Digital weekly safety checklists for Instructors.</li>
                 </ul>
             </div>
         </div>
@@ -248,6 +228,8 @@
 
     <section id="demo">
         <h2 class="section-title">INTERACTIVE PORTAL DEMO</h2>
+        <p style="text-align: center; margin-bottom: 30px;">Select a topic below to see how the system automatically routes the request to the correct person.</p>
+        
         <div class="demo-container">
             <div class="form-side">
                 <form id="innovationForm" onsubmit="handleForm(event)">
@@ -257,6 +239,7 @@
                         <option value="Eastbourne">Eastbourne</option>
                         <option value="Ashford">Ashford</option>
                         <option value="Canterbury">Canterbury</option>
+                        <option value="Folkestone">Folkestone</option>
                         <option value="Tunbridge Wells">Tunbridge Wells</option>
                     </select>
 
@@ -265,22 +248,29 @@
                         <option value="" disabled selected>Select a topic...</option>
                         <option value="finance">💰 Financial Hardship (Confidential)</option>
                         <option value="safeguarding">🛡️ Safeguarding Issue</option>
-                        <option value="idea">💡 Kaizen Idea / Suggestion</option>
-                        <option value="gear">🥋 Equipment Feedback</option>
+                        <option value="gear">🥋 Equipment & Quality Feedback</option>
+                        <option value="safety_check">✅ Weekly Safety Check (Staff Only)</option>
+                        <option value="idea">💡 Innovation / Suggestion</option>
                     </select>
 
                     <label>Recipient (Auto-Routed Logic)</label>
                     <select id="recipientSelect">
                         <option value="office">General Office</option>
-                        <option value="Denise Hardy">Denise Hardy (Finance)</option>
+                        <option value="Denise Hardy">Denise Hardy (Admin & Finance)</option>
                         <option value="Claire Canton">Claire Canton (Safeguarding)</option>
-                        <option value="Kaizen Team">Kaizen Team (Review Board)</option>
+                        <option value="Luca Hale-Stretton">Luca Hale-Stretton</option>
+                        <option value="Lisa Collins">Lisa Collins</option>
+                        <option value="Richard Wincott">Richard Wincott</option>
+                        <option value="Darryl Wick">Darryl Wick</option>
+                        <option value="Sarah Pearce">Sarah Pearce</option>
                     </select>
-                    <div id="lockMessage" style="font-size: 0.85rem; color: var(--canton-red); display:none; margin-bottom: 15px; background: #ffe6e6; padding: 5px; border-radius: 4px;"></div>
+                    <div id="lockMessage" style="font-size: 0.85rem; color: var(--canton-red); display:none; margin-bottom: 15px; background: #ffe6e6; padding: 5px; border-radius: 4px;">
+                        <i class="fas fa-lock"></i> Recipient locked by protocol.
+                    </div>
 
                     <label>Message</label>
-                    <textarea id="messageBody" rows="3" placeholder="Enter details..." required></textarea>
-                    <button type="submit" class="btn" style="width: 100%; margin-top: 10px;">SUBMIT TO KAIZEN TEAM</button>
+                    <textarea id="messageBody" rows="3" placeholder="Enter details here..." required></textarea>
+                    <button type="submit" class="btn" style="width: 100%; margin-top: 10px;">SUBMIT</button>
                 </form>
                 
                 <div id="aiResponse" style="background: #e3f2fd; padding: 15px; margin-top: 15px; display:none; border-left: 4px solid var(--canton-navy); border-radius: 4px;">
@@ -291,6 +281,7 @@
 
             <div class="visual-side">
                 <h3 style="text-align: center;">LIVE DATA (CONCEPT)</h3>
+                <p style="text-align: center; font-size: 0.8rem; color: #666;">Example: Kent Open 2025 Performance</p>
                 <div style="height: 250px;">
                     <canvas id="medalChart"></canvas>
                 </div>
@@ -300,14 +291,33 @@
 
     <section id="status">
         <div class="status-box">
-            <h3><i class="fas fa-clipboard-list"></i> NEXT STEPS: KICK-OFF MEETING</h3>
-            <p>To discuss feasibility, privacy protocols, and the scope of the 1-Month Pilot.</p>
+            <h3><i class="fas fa-drafting-compass"></i> PROJECT STATUS: DESIGN & CONCEPT PHASE</h3>
+            <p style="font-size: 1.1rem; margin-top: 15px;">
+                This proposal outlines a vision for the future. All features, workflows, and designs are currently conceptual 
+                and subject to feasibility analysis.
+            </p>
+            
+            <div style="margin-top: 30px; padding-top: 20px; border-top: 1px solid #e0c46c;">
+                <strong>PROPOSED NEXT STEP:</strong><br>
+                <span style="color: var(--canton-red); font-size: 1.5rem; font-weight: bold; display: block; margin: 10px 0;">KICK-OFF MEETING</span>
+                <span style="color: #555;">To define technical requirements, privacy protocols, and determine the scope of the pilot.</span>
+            </div>
+        </div>
+        
+        <div class="pilot-offer">
+            <h3 style="color: var(--canton-red); margin:0; font-size: 2rem;">1-MONTH PILOT OFFER</h3>
+            <p style="font-size: 1.2rem; margin: 10px 0;">Managed by <strong>Assoc. Prof. Dr. Cetin Karakaya</strong> (Volunteer)</p>
+            <div style="font-size: 1rem; opacity: 0.9; margin-top: 20px;">
+                <span style="margin: 0 15px;"><i class="fas fa-check"></i> Zero Cost</span>
+                <span style="margin: 0 15px;"><i class="fas fa-link"></i> Integrated via Link</span>
+                <span style="margin: 0 15px;"><i class="fas fa-undo"></i> Cancel Anytime</span>
+            </div>
         </div>
     </section>
 
     <footer>
         <p style="font-size: 1.1rem; color: white;">&copy; 2026 Voice of Canton Proposal.</p>
-        <p style="opacity: 0.7;">Developed by <strong>Assoc. Prof. Dr. Cetin Karakaya</strong></p>
+        <p style="opacity: 0.7;">Conceptualized and Developed by<br> <strong>Assoc. Prof. Dr. Cetin Karakaya</strong></p>
     </footer>
 
     <script>
@@ -315,18 +325,27 @@
             const cat = document.getElementById('categorySelect').value;
             const rec = document.getElementById('recipientSelect');
             const msg = document.getElementById('lockMessage');
-            rec.disabled = false; msg.style.display = 'none';
+            
+            // Reset
+            rec.disabled = false; 
+            msg.style.display = 'none';
 
             if(cat === 'finance') { 
-                rec.value = "Denise Hardy"; rec.disabled = true; msg.style.display = 'block'; 
-                msg.innerHTML = "<i class='fas fa-lock'></i> Locked to Admin & Finance."; 
+                rec.value = "Denise Hardy"; 
+                rec.disabled = true; 
+                msg.style.display = 'block'; 
+                msg.innerHTML = "<i class='fas fa-lock'></i> Locked to <strong>Admin & Finance</strong> for privacy."; 
             }
             else if(cat === 'safeguarding') { 
-                rec.value = "Claire Canton"; rec.disabled = true; msg.style.display = 'block'; 
-                msg.innerHTML = "<i class='fas fa-user-shield'></i> Locked to Safeguarding Officer."; 
+                rec.value = "Claire Canton"; 
+                rec.disabled = true; 
+                msg.style.display = 'block'; 
+                msg.innerHTML = "<i class='fas fa-user-shield'></i> Locked to <strong>Safeguarding Officer</strong>."; 
             }
-            else if(cat === 'idea') {
-                rec.value = "Kaizen Team";
+            else if(cat === 'safety_check') {
+                rec.value = "office"; // Default to office for checks
+                msg.style.display = 'block';
+                msg.innerHTML = "<i class='fas fa-clipboard-check'></i> Compliance Log routed to HQ.";
             }
         }
 
@@ -337,12 +356,21 @@
             const title = document.getElementById('responseTitle');
             const txt = document.getElementById('responseText');
             
-            btn.innerHTML = 'PROCESSING...';
+            const originalText = btn.innerText;
+            btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> PROCESSING...';
+            
             setTimeout(() => {
-                btn.innerHTML = 'SUBMITTED';
+                btn.innerHTML = '<i class="fas fa-check"></i> SENT';
+                btn.style.backgroundColor = '#28a745';
+                
                 box.style.display = 'block';
-                title.innerText = "✅ Logged for Kaizen Review";
-                txt.innerHTML = "Your input has been securely sent to the selected recipient.";
+                title.innerText = "✅ Routed Successfully";
+                txt.innerHTML = "Your request has been securely logged. <br><strong>Status:</strong> Pending Review by " + document.getElementById('recipientSelect').value;
+                
+                setTimeout(() => {
+                    btn.innerHTML = originalText;
+                    btn.style.backgroundColor = '#E60000';
+                }, 3000);
             }, 1000);
         }
 
@@ -351,7 +379,11 @@
                 type: 'bar',
                 data: {
                     labels: ['Hastings', 'Ashford', 'Eastbourne', 'Canterbury', 'Folkestone'],
-                    datasets: [{ label: 'Total Medals', data: [39, 35, 30, 18, 17], backgroundColor: '#E60000' }]
+                    datasets: [{ 
+                        label: 'Total Medals', 
+                        data: [39, 35, 30, 18, 17], 
+                        backgroundColor: ['#E60000', '#111', '#111', '#111', '#111'] 
+                    }]
                 },
                 options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false } } }
             });
