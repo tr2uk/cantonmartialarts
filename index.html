@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-GB">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,266 +8,258 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <style>
-        :root {
-            --canton-red: #C00000;
-            --canton-blue: #4da6ff;
-        }
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f8f9fa; }
-        .hero-bg {
-            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1555597673-b21d5c935865?auto=format&fit=crop&q=80');
-            background-size: cover; background-position: center;
-        }
-        .dojo-grayscale { filter: grayscale(100%); transition: 0.4s; }
-        .dojo-grayscale:hover { filter: grayscale(0%); transform: scale(1.05); }
-        .patch-card {
-            background: radial-gradient(circle, #fff 0%, #e0e0e0 100%);
-            border: 2px dashed #999;
-            box-shadow: 5px 5px 15px rgba(0,0,0,0.1);
-        }
-        .en-dash::before { content: " – "; }
+        :root { --canton-red: #C00000; --canton-blue: #4da6ff; }
+        body { font-family: 'Inter', sans-serif; scroll-behavior: smooth; }
+        .hero-section { background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1552072092-7f9b8d63efcb?q=80&w=2070&auto=format&fit=crop'); background-size: cover; background-position: center; }
+        .dojo-grayscale { filter: grayscale(100%); transition: 0.5s ease; }
+        .dojo-grayscale:hover { filter: grayscale(0%); transform: scale(1.1); cursor: pointer; }
+        .patch-design { background: #fdfdfd; border: 2px dashed #ccc; box-shadow: inset 0 0 20px rgba(0,0,0,0.05); }
+        .risk-free-box { border: 4px solid var(--canton-red); background-color: #000; color: #fff; }
     </style>
 </head>
-<body class="text-gray-800">
+<body class="bg-white text-gray-900">
 
-    <header class="bg-white border-b-2 border-gray-100 p-4 sticky top-0 z-50">
-        <div class="container mx-auto flex justify-between items-center">
-            <img src="big_logo.jpg" alt="Canton Logo" class="h-16"> [cite: 3]
-            <div class="text-right uppercase font-bold tracking-tight">
-                <div class="text-2xl">
-                    <span style="color:var(--canton-blue)">VOICE</span> 
-                    <span class="text-sm normal-case font-light text-gray-500 italic">of</span> 
-                    <span style="color:var(--canton-red)">CANTON</span>
-                </div> [cite: 5]
-                <div class="text-xs text-gray-400 border-t mt-1">Volunteer Project Proposal by</div> [cite: 6]
-                <div class="text-sm">Assoc. Prof. Dr Cetin Karakaya</div> [cite: 7]
+    <header class="sticky top-0 z-50 bg-white border-b shadow-sm py-4 px-6">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <img src="big_logo.jpg" alt="Canton Logo" class="h-16">
+            <div class="text-right">
+                <h1 class="font-bold text-2xl tracking-tighter uppercase">
+                    <span style="color: var(--canton-blue);">VOICE</span> 
+                    <span class="text-sm lowercase font-light italic">of</span> 
+                    <span style="color: var(--canton-red);">CANTON</span>
+                </h1>
+                <p class="text-[10px] text-gray-500 uppercase tracking-widest mt-1">Volunteer Project Proposal by</p>
+                <p class="font-bold text-sm">Assoc. Prof. Dr Cetin Karakaya</p>
             </div>
         </div>
     </header>
 
-    <section class="hero-bg h-[70vh] flex items-center justify-center text-center text-white px-4">
+    <section class="hero-section h-[85vh] flex flex-col justify-center items-center text-center px-6">
         <div data-aos="fade-up">
-            <h1 class="text-5xl md:text-7xl font-black mb-6">
-                <span style="color:var(--canton-red)">THE FUTURE</span> 
-                <span class="text-3xl lowercase font-light italic">of</span> 
-                <span style="color:var(--canton-blue)">OUR DOJOS</span>
-            </h1> [cite: 11, 12, 13]
-            <p class="max-w-2xl mx-auto text-lg mb-8 leading-relaxed">
+            <h2 class="text-5xl md:text-7xl font-black text-white mb-6 uppercase">
+                <span style="color: var(--canton-red);">THE FUTURE</span> 
+                <span class="text-3xl italic lowercase font-light">of</span> 
+                <span style="color: var(--canton-blue);">OUR DOJOS</span>
+            </h2>
+            <p class="text-xl text-gray-200 max-w-3xl mx-auto leading-relaxed mb-10">
                 Applying the Japanese philosophy of "Kaizen" (Continuous Improvement) to our Dojo operations. 
-                A centralised system to listen, improve, and empower every student and instructor. [cite: 14, 15, 16]
+                A centralised system to listen, improve, and empower every student and instructor.
             </p>
-            <a href="#portal" class="bg-[#C00000] hover:bg-red-700 text-white px-8 py-4 rounded-full font-bold transition-all shadow-lg uppercase">
+            <a href="#portal" class="bg-[#C00000] text-white px-10 py-5 rounded-md font-bold text-lg hover:scale-105 transition-transform uppercase tracking-widest">
                 Try the Concept Demo
-            </a> [cite: 17]
+            </a>
         </div>
     </section>
 
-    <section class="py-12 bg-white overflow-hidden">
-        <div class="container mx-auto flex flex-wrap justify-center gap-8 opacity-80">
-            <div class="text-center dojo-grayscale"><div class="font-bold">ASHFORD</div></div> [cite: 20]
-            <div class="text-center dojo-grayscale"><div class="font-bold">CANTERBURY</div></div> [cite: 21]
-            <div class="text-center dojo-grayscale"><div class="font-bold">EASTBOURNE</div></div> [cite: 22]
-            <div class="text-center dojo-grayscale"><div class="font-bold">FOLKESTONE</div></div> [cite: 23]
-            <div class="text-center dojo-grayscale"><div class="font-bold">HASTINGS & BEXHILL</div></div> [cite: 24]
-            <div class="text-center dojo-grayscale"><div class="font-bold">TUNBRIDGE WELLS</div></div> [cite: 25]
+    <div class="bg-gray-100 py-10 border-y overflow-x-auto">
+        <div class="flex justify-center items-center gap-12 px-6 min-w-max">
+            <span class="dojo-grayscale font-black text-gray-400">ASHFORD</span>
+            <span class="dojo-grayscale font-black text-gray-400">CANTERBURY</span>
+            <span class="dojo-grayscale font-black text-gray-400">EASTBOURNE</span>
+            <span class="dojo-grayscale font-black text-gray-400">FOLKESTONE</span>
+            <span class="dojo-grayscale font-black text-gray-400">HASTINGS & BEXHILL</span>
+            <span class="dojo-grayscale font-black text-gray-400">TUNBRIDGE WELLS</span>
         </div>
-    </section>
+    </div>
 
-    <section class="py-20 bg-gray-50">
-        <div class="container mx-auto px-4 text-center">
-            <h2 class="text-3xl font-black mb-4">BUILT ON OUR CORE VALUES</h2> [cite: 28]
-            <p class="text-gray-500 mb-12">The "Voice of Canton" initiative relies on close relationships and ownership of these 5 pillars.</p> [cite: 29]
-            <div class="grid grid-cols-1 md:grid-cols-5 gap-6">
-                <div class="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition">
-                    <div class="text-3xl mb-4">🔥</div><h3 class="font-bold mb-2">SPIRIT</h3><p class="text-xs">We never give up, we never give in.</p>
-                </div> [cite: 31]
-                <div class="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition border-t-4 border-blue-400">
-                    <div class="text-3xl mb-4">⭐</div><h3 class="font-bold mb-2 text-blue-500">QUALITY</h3><p class="text-xs">Engaging, evolving, applicable.</p>
-                </div> [cite: 32]
-                <div class="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition">
-                    <div class="text-3xl mb-4">🤝</div><h3 class="font-bold mb-2">SERVICE</h3><p class="text-xs">Premium experience and service.</p>
-                </div> [cite: 33]
-                <div class="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition">
-                    <div class="text-3xl mb-4">👊</div><h3 class="font-bold mb-2">DEDICATION</h3><p class="text-xs">Inspiration to become dedicated.</p>
-                </div> [cite: 34]
-                <div class="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition">
-                    <div class="text-3xl mb-4">😊</div><h3 class="font-bold mb-2">FUN</h3><p class="text-xs">Enjoy the journey, keep smiling.</p>
-                </div> [cite: 35]
+    <section class="py-24 px-6 max-w-7xl mx-auto text-center">
+        <h3 class="text-4xl font-black mb-4 uppercase">Built on Our Core Values</h3>
+        <p class="text-gray-600 mb-16 italic text-lg">"The 'Voice of Canton' initiative relies on close relationships and ownership of these 5 pillars."</p>
+        <div class="grid grid-cols-1 md:grid-cols-5 gap-8">
+            <div class="p-8 border rounded-2xl shadow-sm hover:shadow-lg transition">
+                <div class="text-4xl mb-4">🔥</div><h4 class="font-bold mb-2">SPIRIT</h4><p class="text-xs leading-relaxed text-gray-500">"We never give up, we never give in, we will always do our best."</p>
+            </div>
+            <div class="p-8 border rounded-2xl shadow-sm hover:shadow-lg transition border-blue-200">
+                <div class="text-4xl mb-4">⭐</div><h4 class="font-bold mb-2">QUALITY</h4><p class="text-xs leading-relaxed text-gray-500">"Classes are engaging, evolving, applicable and inclusive."</p>
+            </div>
+            <div class="p-8 border rounded-2xl shadow-sm hover:shadow-lg transition">
+                <div class="text-4xl mb-4">🤝</div><h4 class="font-bold mb-2">SERVICE</h4><p class="text-xs leading-relaxed text-gray-500">"We will offer a premium experience through premium customer service."</p>
+            </div>
+            <div class="p-8 border rounded-2xl shadow-sm hover:shadow-lg transition">
+                <div class="text-4xl mb-4">👊</div><h4 class="font-bold mb-2">DEDICATION</h4><p class="text-xs leading-relaxed text-gray-500">"Our aim is to inspire others to become dedicated to their sport."</p>
+            </div>
+            <div class="p-8 border rounded-2xl shadow-sm hover:shadow-lg transition">
+                <div class="text-4xl mb-4">😊</div><h4 class="font-bold mb-2">FUN</h4><p class="text-xs leading-relaxed text-gray-500">"We ensure you enjoy the journey, a smile on your face is what we want."</p>
             </div>
         </div>
     </section>
 
-    <section class="py-20 bg-white">
-        <div class="container mx-auto px-4">
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
-                <div class="bg-red-50 p-8 rounded-2xl border-l-8 border-red-600">
-                    <h3 class="text-red-600 font-black text-2xl mb-6">CURRENT CHALLENGES</h3> [cite: 42]
-                    <ul class="space-y-4 text-sm">
-                        <li><strong>🔴 Sudden Churn:</strong> Lack of platform leads to abrupt exits.</li> [cite: 43, 44]
-                        <li><strong>🔴 Isolated Dojos:</strong> No daily connection between locations.</li> [cite: 45, 46]
-                        <li><strong>🔴 Friction:</strong> Sizing issues with Gis lead to revenue loss.</li> [cite: 47, 48, 49]
-                        <li><strong>🔴 Bottlenecks:</strong> Instructors only have 10 mins for feedback.</li> [cite: 52, 53]
-                    </ul>
+    <section class="py-24 bg-gray-50 px-6">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16">
+            <div>
+                <h3 class="text-red-600 font-black text-3xl mb-10 uppercase underline decoration-2 underline-offset-8">Current Challenges</h3>
+                <div class="space-y-6 text-sm">
+                    <div class="bg-white p-5 rounded-xl border-l-4 border-red-500 shadow-sm">
+                        <p class="font-bold">🔴 Internal Buildup & Sudden Churn</p>
+                        <p class="text-gray-600 mt-1 italic">Lack of platform leads to abrupt exits over minor excuses.</p>
+                    </div>
+                    <div class="bg-white p-5 rounded-xl border-l-4 border-red-500 shadow-sm">
+                        <p class="font-bold">🔴 Isolated Dojos</p>
+                        <p class="text-gray-600 mt-1 italic">The locations currently operate as separate islands with no daily connection.</p>
+                    </div>
+                    <div class="bg-white p-5 rounded-xl border-l-4 border-red-500 shadow-sm">
+                        <p class="font-bold">🔴 Uniform & Equipment Friction</p>
+                        <p class="text-gray-600 mt-1 italic">Sizing issues lead students to buy non-branded gear, diluting identity.</p>
+                    </div>
+                    <div class="bg-white p-5 rounded-xl border-l-4 border-red-500 shadow-sm">
+                        <p class="font-bold">🔴 Communication Bottlenecks</p>
+                        <p class="text-gray-600 mt-1 italic">Instructors have limited time, leading to forgotten requests.</p>
+                    </div>
                 </div>
-                <div class="bg-green-50 p-8 rounded-2xl border-l-8 border-green-600">
-                    <h3 class="text-green-600 font-black text-2xl mb-6">PROPOSED SOLUTIONS</h3> [cite: 60]
-                    <ul class="space-y-4 text-sm">
-                        <li><strong>🟢 Right to be Heard:</strong> Reduces tension, fosters belonging.</li> [cite: 61, 62]
-                        <li><strong>🟢 Innovation Bridge:</strong> Statistics sharing beyond mats.</li> [cite: 63, 64]
-                        <li><strong>🟢 Official Patch:</strong> WKF gear + Velcro Patch identity.</li> [cite: 65, 66, 67]
-                        <li><strong>🟢 Digital Voice:</strong> Encrypted channel for hardship.</li> [cite: 74, 75]
-                    </ul>
+            </div>
+            <div>
+                <h3 class="text-green-600 font-black text-3xl mb-10 uppercase underline decoration-2 underline-offset-8">Proposed Solutions</h3>
+                <div class="space-y-6 text-sm">
+                    <div class="bg-white p-5 rounded-xl border-l-4 border-green-500 shadow-sm">
+                        <p class="font-bold">🟢 The Power of Expression</p>
+                        <p class="text-gray-600 mt-1 italic">Granting the formal right to be heard reduces tension and fosters belonging.</p>
+                    </div>
+                    <div class="bg-white p-5 rounded-xl border-l-4 border-green-500 shadow-sm">
+                        <p class="font-bold">🟢 The "Innovation Bridge"</p>
+                        <p class="text-gray-600 mt-1 italic">Cross-Dojo statistics create a permanent bridge beyond competition mats.</p>
+                    </div>
+                    <div class="bg-white p-5 rounded-xl border-l-4 border-green-500 shadow-sm">
+                        <p class="font-bold">🟢 The "Official Patch" Model</p>
+                        <p class="text-gray-600 mt-1 italic">Mandate high-quality Velcro Patches on WKF-approved gear.</p>
+                    </div>
+                    <div class="bg-white p-5 rounded-xl border-l-4 border-green-500 shadow-sm">
+                        <p class="font-bold">🟢 Confidential "Digital Voice"</p>
+                        <p class="text-gray-600 mt-1 italic">Discreet, encrypted channel for financial or safeguarding support.</p>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="portal" class="py-20 bg-gray-900 text-white">
-        <div class="container mx-auto px-4 max-w-4xl">
-            <div class="text-center mb-12">
-                <h2 class="text-4xl font-black">MEMBER PORTAL DEMO</h2>
-                <div class="mt-4 p-4 bg-yellow-900/30 border border-yellow-600 text-yellow-200 text-sm rounded-lg">
-                    <strong>IMPORTANT:</strong> Your local Dojo Instructor will <strong>NOT</strong> see this submission. [cite: 101]
-                </div>
-            </div>
-
-            <div class="bg-white text-gray-900 p-8 rounded-3xl shadow-2xl">
-                <form action="mailto:info@cantonmartialarts.org.uk" method="post" enctype="text/plain" class="space-y-6">
+    <section id="portal" class="py-24 px-6 bg-gray-900">
+        <div class="max-w-4xl mx-auto">
+            <h3 class="text-white text-center text-4xl font-black mb-12 uppercase tracking-widest">Interactive Member Portal</h3>
+            <div class="bg-white p-10 rounded-3xl shadow-2xl">
+                <p class="bg-red-50 text-red-700 p-4 rounded-lg mb-8 text-sm border border-red-100">
+                    <strong>IMPORTANT:</strong> Your local Dojo Instructor will <strong>NOT</strong> see this submission. This form is encrypted and routed directly to Club Management.
+                </p>
+                <form action="mailto:info@cantonmartialarts.org.uk" method="POST" enctype="text/plain" class="grid grid-cols-1 gap-6">
                     <div>
-                        <label class="block font-bold mb-2">Select Your Dojo:</label> [cite: 105]
-                        <select class="w-full p-3 border rounded-lg focus:ring-2 focus:ring-blue-500">
-                            <option>Ashford</option>
-                            <option>Canterbury</option>
-                            <option>Eastbourne</option>
-                            <option>Folkestone</option>
-                            <option>Hastings & Bexhill</option>
-                            <option>Tunbridge Wells</option>
+                        <label class="block font-bold text-gray-700 mb-2">Select Your Dojo:</label>
+                        <select class="w-full border p-4 rounded-xl focus:ring-2 focus:ring-blue-400 transition" required>
+                            <option value="">Choose Location...</option>
+                            <option>Ashford</option><option>Canterbury</option><option>Eastbourne</option>
+                            <option>Folkestone</option><option>Hastings & Bexhill</option><option>Tunbridge Wells</option>
                         </select>
                     </div>
                     <div>
-                        <label class="block font-bold mb-2">Category:</label> [cite: 106]
-                        <select id="categorySelect" class="w-full p-3 border rounded-lg" onchange="updateRecipient()">
-                            <option value="Kaizen Review Board">Creative Idea & Kaizen</option> [cite: 114]
-                            <option value="Denise Hardy">Financial Hardship (Confidential)</option> [cite: 108, 109]
-                            <option value="Claire Canton">Safeguarding Issue (Confidential)</option> [cite: 111, 112]
-                            <option value="Kaizen Review Board">Uniform & Equipment</option> [cite: 116]
-                            <option value="General Office">Other & General Enquiries</option> [cite: 122]
+                        <label class="block font-bold text-gray-700 mb-2">Category & Auto-Routing:</label>
+                        <select id="catSelect" class="w-full border p-4 rounded-xl" onchange="updateRecipient()" required>
+                            <option value="Kaizen Review Board">Creative Idea & Kaizen</option>
+                            <option value="Denise Hardy">Financial Hardship (Confidential)</option>
+                            <option value="Claire Canton">Safeguarding Issue (Confidential)</option>
+                            <option value="Kaizen Review Board">Uniform & Equipment</option>
+                            <option value="General Office">Other & General Enquiries</option>
                         </select>
-                        <p class="mt-2 text-xs text-blue-600 italic">Recipient: <span id="recipientName" class="font-bold text-red-600">Kaizen Review Board</span></p> 
+                        <div class="mt-3 p-3 bg-blue-50 text-blue-700 text-xs rounded-lg font-bold">
+                            Recipient: <span id="recipient" class="uppercase">Kaizen Review Board</span>
+                        </div>
                     </div>
                     <div>
-                        <label class="block font-bold mb-2">Message:</label>
-                        <textarea class="w-full p-3 border rounded-lg h-32" placeholder="Your voice matters..."></textarea>
+                        <label class="block font-bold text-gray-700 mb-2">Your Message:</label>
+                        <textarea class="w-full border p-4 rounded-xl h-32" placeholder="Your voice matters to us..."></textarea>
                     </div>
-                    <div class="flex items-center gap-4 text-sm text-gray-500">
-                        <label><input type="checkbox" class="mr-2"> Anonymous Submission</label> [cite: 125]
-                        <label><input type="checkbox" class="mr-2" required> GDPR Consent</label> [cite: 126]
+                    <div class="flex flex-col gap-3 text-sm">
+                        <label class="flex items-center gap-2 text-gray-600"><input type="checkbox"> Submit Anonymously</label>
+                        <label class="flex items-center gap-2 text-gray-600"><input type="checkbox" required> I consent to GDPR processing</label>
                     </div>
-                    <button type="submit" class="w-full bg-blue-600 text-white font-bold py-4 rounded-xl hover:bg-blue-700 uppercase tracking-widest transition">
-                        Submit Contribution
-                    </button>
+                    <button class="w-full bg-[#C00000] text-white py-5 rounded-xl font-black text-xl hover:bg-red-700 transition shadow-xl uppercase tracking-tighter">Submit Contribution</button>
                 </form>
             </div>
         </div>
     </section>
 
-    <section class="py-20 bg-white">
-        <div class="container mx-auto px-4">
-            <h2 class="text-center text-3xl font-black mb-12 uppercase">Dojo Participation Analytics</h2> [cite: 136]
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-                <div>
-                    <canvas id="dojoChart" height="300"></canvas>
+    <section class="py-24 px-6 max-w-7xl mx-auto">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+            <div>
+                <canvas id="participationChart"></canvas>
+            </div>
+            <div class="space-y-10">
+                <h3 class="text-3xl font-black uppercase">Live Participation by Dojo</h3>
+                <div class="bg-yellow-50 p-6 rounded-2xl border-2 border-yellow-500">
+                    <h4 class="font-black text-yellow-800 text-xl mb-2 italic">🏆 DOJO OF THE MONTH</h4>
+                    <p class="font-bold text-gray-700">Canterbury Dojo – 19 Contributions</p>
                 </div>
-                <div class="space-y-6">
-                    <div class="p-6 bg-gray-50 rounded-xl border-l-4 border-yellow-500">
-                        <h4 class="font-bold text-lg mb-2">🏆 DOJO OF THE MONTH</h4>
-                        <p class="text-sm">Current Leader: <strong>Canterbury Dojo</strong></p>
-                    </div> [cite: 146, 147]
-                    <div class="p-6 bg-blue-50 rounded-xl border-l-4 border-blue-600">
-                        <h4 class="font-bold text-lg mb-2">🥋 KAIZEN BLACK BELT</h4>
-                        <p class="text-sm italic">"Innovative gear storage solution" – John S. (Hastings)</p>
-                    </div> [cite: 149, 150, 161]
+                <div class="bg-blue-50 p-6 rounded-2xl border-2 border-blue-500">
+                    <h4 class="font-black text-blue-800 text-xl mb-2 italic">🥋 KAIZEN BLACK BELT</h4>
+                    <p class="font-bold text-gray-700">John S. – Hastings Dojo</p>
+                    <p class="text-xs mt-1 text-gray-500 italic">"Honorary Title & Digital Badge for innovative ideas."</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="py-20 bg-gray-50 border-y">
-        <div class="container mx-auto px-4">
-            <div class="flex flex-col md:flex-row items-center gap-12">
-                <div class="md:w-1/2">
-                    <h2 class="text-4xl font-black mb-6">THE PATCH STRATEGY</h2> [cite: 83]
-                    <p class="mb-4">Standard Gi sizes often don't fit, leading students to buy non-branded external gear.</p> [cite: 89]
-                    <p class="text-green-700 font-bold mb-6">Solution: The "Canton Official Velcro Patch".</p> [cite: 90]
-                    <p class="text-sm leading-relaxed text-gray-600 italic">
-                        Students purchase high-quality WKF approved gear and attach the patch. This results in higher profit margins and student satisfaction. [cite: 91, 92]
-                    </p>
+    <section class="py-24 bg-gray-50 px-6">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row gap-16 items-center">
+            <div class="md:w-1/2">
+                <h3 class="text-4xl font-black mb-8 uppercase">The Patch Strategy</h3>
+                <p class="text-gray-700 leading-relaxed mb-6">
+                    Problem: Sizing issues and stock costs with mandatory club Gis. [cite: 89]
+                </p>
+                <div class="bg-green-100 p-6 rounded-xl border-l-8 border-green-600 font-bold text-green-800">
+                    Solution: The "Canton Official Velcro Patch". [cite: 90]
                 </div>
-                <div class="md:w-1/2 flex justify-center">
-                    <div class="patch-card w-72 h-72 rounded-lg flex flex-col items-center justify-center p-4 relative">
-                        <div class="absolute inset-2 border-2 border-dashed border-red-800 rounded"></div>
-                        <img src="IMG_6847.jpg" alt="Patch Reference" class="w-full h-full object-cover rounded opacity-90"> [cite: 87]
-                        <div class="absolute bottom-4 bg-black/80 text-white px-3 py-1 text-[10px] font-bold uppercase tracking-tighter">
-                            Spirit • Dedication • Fun
-                        </div> [cite: 87]
+                <p class="mt-6 text-sm text-gray-500 italic">
+                    Students purchase high-quality gear (comfort) and attach the patch (identity). Higher profit margins for the club and higher satisfaction. [cite: 91, 92]
+                </p>
+            </div>
+            <div class="md:w-1/2 flex justify-center">
+                <div class="patch-design w-80 h-80 rounded-lg p-4 flex flex-col items-center justify-between border-gray-300">
+                    <img src="IMG_6847.jpg" alt="Patch Reference" class="w-full h-full object-cover rounded opacity-90 shadow-lg">
+                    <div class="w-full text-center py-2 bg-black text-white text-[10px] font-bold uppercase tracking-widest mt-2">
+                        Spirit • Dedication • Fun
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="py-20 bg-white text-center">
-        <div class="container mx-auto px-4 max-w-2xl">
-            <div class="bg-black text-white p-12 rounded-3xl border-4 border-red-600" data-aos="zoom-in">
-                <h2 class="text-3xl font-black mb-4">THE "RISK-FREE" PILOT</h2> [cite: 165, 166]
-                <ul class="text-left space-y-4 mb-8">
-                    <li class="flex items-center gap-2">✅ Zero Setup Cost & Implementation fees.</li> [cite: 167]
-                    <li class="flex items-center gap-2">✅ Integrated via simple access link.</li> [cite: 168]
-                    <li class="flex items-center gap-2">✅ Cancel anytime – No commitment.</li> [cite: 169]
-                </ul>
-                <div class="border-t border-gray-700 pt-8">
-                    <p class="mb-4 font-bold">NEXT STEP: KICK-OFF MEETING</p> [cite: 174]
-                    <button class="bg-red-600 text-white px-10 py-3 rounded-lg font-bold hover:bg-red-700 transition">
-                        Select Briefing Slot
-                    </button> [cite: 176]
-                </div>
+    <section class="py-24 px-6">
+        <div class="max-w-3xl mx-auto risk-free-box p-12 rounded-3xl text-center shadow-2xl">
+            <h3 class="text-3xl font-black mb-8 italic uppercase underline decoration-red-600">The "Risk-Free" Pilot Phase</h3>
+            <ul class="text-left space-y-4 text-lg mb-12">
+                <li>✅ Zero Setup Cost & No initial investment. [cite: 167]</li>
+                <li>✅ Integrated via simple access link. [cite: 168]</li>
+                <li>✅ Cancel Anytime – No long-term commitment. [cite: 169]</li>
+            </ul>
+            <div class="border-t border-gray-700 pt-10">
+                <p class="font-bold mb-4 uppercase text-sm tracking-widest">Next Step: Kick-Off Meeting</p>
+                <button class="bg-[#C00000] text-white px-12 py-5 rounded-full font-black uppercase text-xl hover:scale-105 transition">
+                    Schedule Your Briefing
+                </button>
             </div>
         </div>
     </section>
 
-    <footer class="bg-gray-100 py-8 text-center text-xs text-gray-400">
+    <footer class="bg-white border-t py-12 px-6 text-center text-gray-400 text-xs uppercase tracking-widest">
         Managed by The Kaizen Team – Assoc. Prof. Dr Cetin Karakaya <br>
-        Canton Martial Arts © 2026 – All Rights Reserved.
+        Canton Martial Arts © 2026 – All Rights Reserved. [cite: 135, 179]
     </footer>
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
-        AOS.init();
+        AOS.init({ duration: 1000, once: true });
 
         function updateRecipient() {
-            const select = document.getElementById('categorySelect');
-            const recipient = document.getElementById('recipientName');
-            recipient.innerText = select.value;
+            const select = document.getElementById('catSelect');
+            document.getElementById('recipient').innerText = select.value;
         }
 
-        // Analytics Chart with Logical Assumption Data
-        const ctx = document.getElementById('dojoChart').getContext('2d');
+        const ctx = document.getElementById('participationChart').getContext('2d');
         new Chart(ctx, {
             type: 'bar',
             data: {
                 labels: ['Ashford', 'Canterbury', 'Eastbourne', 'Folkestone', 'Hastings', 'Tunbridge Wells'],
                 datasets: [{
-                    label: 'Constructive Contributions (Current Pilot Simulation)',
+                    label: 'Feedback Contributions',
                     data: [12, 19, 3, 5, 15, 8],
-                    backgroundColor: [
-                        'rgba(192, 0, 0, 0.7)',
-                        'rgba(77, 166, 255, 0.7)',
-                        'rgba(192, 0, 0, 0.7)',
-                        'rgba(77, 166, 255, 0.7)',
-                        'rgba(192, 0, 0, 0.7)',
-                        'rgba(77, 166, 255, 0.7)'
-                    ],
-                    borderColor: '#fff',
-                    borderWidth: 2
+                    backgroundColor: ['#C00000', '#4da6ff', '#C00000', '#4da6ff', '#C00000', '#4da6ff'],
+                    borderRadius: 8
                 }]
             },
             options: {
