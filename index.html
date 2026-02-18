@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en-GB">
 <head>
@@ -21,332 +20,277 @@
         body { font-family: 'Roboto', sans-serif; margin: 0; padding: 0; background-color: var(--canton-gray); color: #333; }
         h1, h2, h3, h4 { font-family: 'Oswald', sans-serif; text-transform: uppercase; }
 
-        /* --- HEADER --- */
+        /* HEADER */
         header {
-            background-color: var(--canton-black); color: var(--white); padding: 15px 40px;
+            background-color: var(--canton-black); color: var(--white); padding: 15px 30px;
             display: flex; justify-content: space-between; align-items: center;
             position: sticky; top: 0; z-index: 1000; border-bottom: 4px solid var(--canton-red);
         }
         .logo-img { height: 50px; } 
         
-          .brand-title { font-family: 'Oswald', sans-serif; font-size: 2rem; font-weight: 700; line-height: 1; text-align: right; }
+        .brand-title { font-family: 'Oswald', sans-serif; font-size: 2rem; font-weight: 700; line-height: 1; text-align: right; }
         .brand-voice { color: #4fa3ff; }
         .brand-of { color: var(--white); font-weight: 300; font-size: 1.5rem; }
         .brand-canton { color: var(--canton-red); }
         .author-credit { font-size: 0.8rem; color: #ccc; margin-top: 5px; font-weight: 300; text-align: right; letter-spacing: 0.5px;}
 
-        /* --- HERO SECTION --- */
+        /* HERO SECTION */
         .hero {
-            /* Arka plan: Karateci Çocuk Resmi olduğu varsayılıyor, yoksa dragon kullanılır */
-            background: linear-gradient(rgba(0,31,63,0.85), rgba(0,0,0,0.6)), url('big_logo.jpg'); 
-            background-size: cover; background-position: center; height: 65vh;
+            /* Arka plana martial arts texturesi ekledim */
+            background: linear-gradient(rgba(0,31,63,0.9), rgba(0,0,0,0.8)), url('big_logo.jpg');
+            background-size: cover; background-position: center; height: 60vh;
             display: flex; flex-direction: column; justify-content: center; align-items: center;
             text-align: center; color: white; padding: 20px;
         }
-        .hero h1 { font-size: 4rem; margin-bottom: 10px; letter-spacing: 2px; text-shadow: 0 4px 15px rgba(0,0,0,0.6); }
-        .hero-future { color: #4fa3ff; } /* Açık Lacivert/Mavi */
-        .hero-of { color: white; font-size: 2.5rem; font-weight: 300; }
-        .hero-dojos { color: var(--canton-red); }
-
-        .hero p { font-size: 1.3rem; max-width: 850px; font-weight: 300; line-height: 1.6; margin-top: 10px; }
+        .hero h1 { font-size: 3.5rem; margin-bottom: 10px; letter-spacing: 2px; text-shadow: 0 4px 10px rgba(0,0,0,0.5); }
+        .hero p { font-size: 1.2rem; max-width: 800px; font-weight: 300; line-height: 1.6; }
         .btn {
             background-color: var(--canton-red); color: white; padding: 15px 40px;
-            text-decoration: none; font-weight: bold; border-radius: 5px; margin-top: 30px;
+            text-decoration: none; font-weight: bold; border-radius: 5px; margin-top: 25px;
             display: inline-block; transition: 0.3s; border: none; cursor: pointer; font-size: 1rem;
-            box-shadow: 0 4px 15px rgba(230, 0, 0, 0.4);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
         }
         .btn:hover { background-color: white; color: var(--canton-red); }
 
-        /* --- DOJO GRID (ALPHABETICAL & NAVY TINT) --- */
+        /* DOJO LOGOS GRID */
         .dojo-grid {
-            display: flex; justify-content: center; gap: 25px; flex-wrap: wrap;
-            padding: 35px 20px; background: white; margin-top: -50px; 
-            box-shadow: 0 10px 25px rgba(0,0,0,0.1); max-width: 1100px; margin-left: auto; margin-right: auto;
+            display: flex; justify-content: center; gap: 20px; flex-wrap: wrap;
+            padding: 30px 20px; background: white; margin-top: -40px; 
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1); max-width: 1100px; margin-left: auto; margin-right: auto;
             border-radius: 10px; position: relative; z-index: 10;
         }
-        .dojo-item { text-align: center; width: 130px; transition: 0.3s; }
-        .dojo-item img { 
-            width: 100%; height: auto; transition: 0.4s ease; 
-            /* Hafif Lacivert Filtre: Gri yap, Sepia ekle, Maviye çevir, Koyulaştır */
-            filter: grayscale(100%) sepia(100%) hue-rotate(170deg) saturate(200%) brightness(0.8);
-            opacity: 0.9;
-        }
-        .dojo-item:hover img { 
-            filter: grayscale(0%); opacity: 1; transform: scale(1.1); 
-        }
-        .dojo-name { display: block; font-size: 0.8rem; font-weight: bold; margin-top: 8px; color: var(--canton-navy); }
+        .dojo-item { text-align: center; width: 140px; }
+        .dojo-item img { width: 100%; height: auto; transition: 0.3s; filter: grayscale(100%); opacity: 0.8; }
+        .dojo-item img:hover { filter: grayscale(0%); opacity: 1; transform: scale(1.05); }
+        .dojo-name { display: block; font-size: 0.75rem; font-weight: bold; margin-top: 5px; color: #555; }
 
-        /* SECTIONS GENERAL */
-        section { padding: 80px 20px; max-width: 1200px; margin: 0 auto; }
-        .section-title { text-align: center; font-size: 2.5rem; margin-bottom: 50px; color: var(--canton-black); position: relative; }
+        /* SECTIONS */
+        section { padding: 70px 20px; max-width: 1200px; margin: 0 auto; }
+        .section-title { text-align: center; font-size: 2.5rem; margin-bottom: 20px; color: var(--canton-black); position: relative; }
         .section-title::after { content: ''; display: block; width: 80px; height: 4px; background: var(--canton-red); margin: 15px auto; }
 
-        /* --- KAIZEN TEAM --- */
-        .kaizen-grid {
-            display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; margin-top: 20px;
+        /* KAIZEN TEAM SECTION */
+        .kaizen-container {
+            display: flex; flex-wrap: wrap; justify-content: center; gap: 30px; margin-top: 40px;
         }
         .kaizen-card {
-            background: white; border-radius: 10px; padding: 30px 20px; text-align: center;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05); border-top: 4px solid var(--canton-navy);
-            transition: 0.3s;
+            background: white; border-radius: 10px; padding: 30px; width: 250px; text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05); border-top: 5px solid #555; transition: 0.3s;
         }
         .kaizen-card:hover { transform: translateY(-5px); border-color: var(--canton-red); }
-        .k-img { width: 100px; height: 100px; border-radius: 50%; background: #ddd; margin: 0 auto 15px; object-fit: cover; border: 3px solid #eee; }
-        .k-role { font-size: 0.85rem; text-transform: uppercase; color: var(--canton-red); letter-spacing: 1px; font-weight: bold; margin-bottom: 5px; }
-        .k-name { font-family: 'Oswald', sans-serif; font-size: 1.4rem; color: var(--canton-black); margin-bottom: 5px; }
-        .k-desc { font-size: 0.9rem; color: #666; }
+        .k-role { font-size: 0.9rem; text-transform: uppercase; color: #888; letter-spacing: 1px; margin-bottom: 10px; }
+        .k-name { font-family: 'Oswald', sans-serif; font-size: 1.4rem; color: var(--canton-navy); margin-bottom: 5px; }
+        .k-icon { font-size: 2rem; color: var(--canton-red); margin-bottom: 15px; }
 
-        /* --- CORE VALUES --- */
-        .values-grid {
-            display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px;
+        /* PATCH DESIGN (Realistic CSS) */
+        .patch-display {
+            background: #fff; padding: 40px; border-radius: 10px; text-align: center;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1); margin-top: 30px;
         }
-        .value-card {
-            background: white; padding: 30px 20px; border-radius: 8px; text-align: center;
-            border-bottom: 4px solid #ddd; transition: 0.3s;
-        }
-        .value-card:hover { border-bottom-color: var(--canton-red); transform: translateY(-3px); box-shadow: 0 10px 20px rgba(0,0,0,0.05); }
-        .value-icon { font-size: 2.5rem; color: var(--canton-navy); margin-bottom: 20px; }
-        .value-card h3 { color: var(--canton-red); margin-bottom: 10px; }
-        .value-card p { font-size: 0.9rem; color: #555; line-height: 1.5; }
-
-        /* --- STRATEGY GRID --- */
-        .strategy-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
-        @media(max-width: 768px) { .strategy-grid { grid-template-columns: 1fr; } }
+        .patch-preview { display: flex; justify-content: center; gap: 40px; flex-wrap: wrap; margin-top: 20px; }
         
-        .strategy-box { background: white; padding: 40px; border-radius: 10px; box-shadow: 0 5px 20px rgba(0,0,0,0.05); }
-        .strategy-list li { margin-bottom: 15px; display: flex; align-items: start; line-height: 1.5; }
-        .strategy-list i { margin-right: 15px; margin-top: 5px; }
-
-        /* --- PATCH VISUAL --- */
-        .patch-container { 
-            display: flex; justify-content: center; gap: 40px; flex-wrap: wrap; margin-top: 30px; 
-        }
         .patch {
-            /* Kumaş/Nakış Efekti */
-            background: url('big_logo.jpg') center/cover no-repeat;
-            position: relative; box-shadow: 5px 5px 15px rgba(0,0,0,0.4);
-            filter: contrast(1.1) saturate(1.1);
+            /* Kumaş Dokusu Efekti */
+            background-color: #f0f0f0;
+            background-image: repeating-linear-gradient(45deg, transparent, transparent 1px, rgba(0,0,0,0.05) 1px, rgba(0,0,0,0.05) 2px);
+            display: flex; align-items: center; justify-content: center; flex-direction: column; 
+            text-align: center; font-family: 'Oswald', sans-serif; 
+            box-shadow: 4px 4px 8px rgba(0,0,0,0.3), inset 0 0 20px rgba(0,0,0,0.1);
+            position: relative;
         }
-        /* Dikiş/Velcro Efekti */
-        .patch::before {
-            content: ''; position: absolute; inset: 4px; 
-            border: 2px dashed rgba(255,255,255,0.5); z-index: 2;
+        /* Dikiş Efekti */
+        .patch::after {
+            content: ''; position: absolute; top: 5px; left: 5px; right: 5px; bottom: 5px;
+            border: 2px dashed rgba(255,255,255,0.6); pointer-events: none;
         }
-        .patch-round { width: 150px; height: 150px; border-radius: 50%; border: 5px solid white; }
-        .patch-square { width: 160px; height: 160px; border-radius: 5px; border: 5px solid white; }
+        
+        .patch-round { 
+            width: 140px; height: 140px; border-radius: 50%; 
+            border: 6px solid var(--canton-navy); 
+            background: radial-gradient(circle, #fff 40%, #f4f4f4 100%);
+        }
+        .patch-square { 
+            width: 160px; height: 140px; border-radius: 8px; 
+            border: 6px solid var(--canton-navy); 
+            background: #fff;
+        }
+        
+        .p-voice { color: var(--canton-navy); font-weight: 700; font-size: 1.6rem; line-height: 1; letter-spacing: 1px; text-shadow: 1px 1px 0px rgba(0,0,0,0.1); }
+        .p-of { color: #888; font-weight: 300; font-size: 1rem; margin: 4px 0; font-family: 'Roboto', serif; font-style: italic;}
+        .p-canton { color: var(--canton-red); font-weight: 700; font-size: 2rem; line-height: 1; letter-spacing: 1px; text-shadow: 1px 1px 0px rgba(0,0,0,0.1); }
 
-        /* --- FORM --- */
-        .demo-container { display: flex; flex-wrap: wrap; gap: 40px; background: white; padding: 40px; border-radius: 15px; box-shadow: 0 10px 40px rgba(0,0,0,0.1); }
+        /* DEMO & FORM */
+        .demo-container { display: flex; flex-wrap: wrap; gap: 40px; background: white; padding: 40px; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
         .form-side, .visual-side { flex: 1; min-width: 300px; }
         
-        label { font-weight: bold; display: block; margin-bottom: 8px; color: #444; font-size: 0.95rem;}
-        select, textarea, input[type="text"], input[type="email"] { 
-            width: 100%; padding: 12px; margin-bottom: 20px; border: 1px solid #ccc; 
-            border-radius: 5px; font-family: inherit; font-size: 1rem; background: #fafafa;
-        }
-        select:disabled { background-color: #e9ecef; cursor: not-allowed; border-color: #d1d1d1; color: #666; }
+        label { font-weight: bold; display: block; margin-bottom: 5px; color: #555; font-size: 0.9rem;}
+        select, textarea, input[type="text"] { width: 100%; padding: 12px; margin-bottom: 20px; border: 2px solid #eee; border-radius: 5px; font-family: inherit; font-size: 1rem; background: #fff;}
         
-        /* --- STATUS BOX --- */
+        /* STATUS BOX */
         .status-box {
-            background: linear-gradient(to right, #fff8e1, #fff); border-left: 6px solid #ffc107;
-            padding: 30px; border-radius: 5px; margin-top: 50px;
+            background: linear-gradient(to right, #fff3cd, #fff); border-left: 5px solid #ffc107;
+            padding: 30px; border-radius: 5px; margin-top: 60px; text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
         }
-        .pilot-box {
-            background: var(--canton-black); color: white; padding: 40px; 
-            border-radius: 10px; margin-top: 40px; text-align: center; border: 1px solid #333;
-        }
-
-        footer { background: var(--canton-navy); color: #ccc; text-align: center; padding: 40px; margin-top: 60px; font-size: 0.9rem;}
+        
+        footer { background: var(--canton-navy); color: #ccc; text-align: center; padding: 40px; margin-top: 50px; font-size: 0.9rem;}
     </style>
 </head>
 <body>
 
     <header>
-        <div class="logo-container">
-            <img src="Canton-MA.webp" alt="Canton MA" class="logo-img">
+        <div class="logo-img">
+            <img src="logo.png" alt="Canton MA Logo" style="height: 100%;">
         </div>
-        <div class="header-right">
+        <div class="header-text">
             <div class="brand-title">
                 <span class="brand-voice">VOICE</span> <span class="brand-of">of</span> <span class="brand-canton">CANTON</span>
             </div>
             <div class="author-credit">
-                Volunteer Project Proposal by <strong>Assoc. Prof. Dr Cetin Karakaya</strong>
+                Volunteer Project Proposal by<br>
+                <strong style="color:white; font-size: 1rem;">Assoc. Prof. Dr. Cetin Karakaya</strong>
             </div>
         </div>
     </header>
 
     <section class="hero">
-        <h1>
-            <span class="hero-future">THE FUTURE</span> 
-            <span class="hero-of">of</span> 
-            <span class="hero-dojos">OUR DOJOS</span>
-        </h1>
+        <h1>ONE CLUB. ONE VOICE.</h1>
         <p>
             Applying the Japanese philosophy of <strong>"Kaizen"</strong> (Continuous Improvement) to our Dojo operations.
-            A centralised system to listen, improve, and empower every student and instructor.
+            A centralised system to listen, improve, and grow.
         </p>
         <a href="#demo" class="btn">TRY THE CONCEPT DEMO</a>
     </section>
 
     <div class="dojo-grid">
+        <div class="dojo-item"><img src="hastings_bexhill.jpg" alt="Hastings & Bexhill"><span class="dojo-name">Hastings & Bexhill</span></div>
+        <div class="dojo-item"><img src="eastbourne.jpg" alt="Eastbourne"><span class="dojo-name">Eastbourne</span></div>
         <div class="dojo-item"><img src="ashford.jpg" alt="Ashford"><span class="dojo-name">Ashford</span></div>
         <div class="dojo-item"><img src="canterbury.jpg" alt="Canterbury"><span class="dojo-name">Canterbury</span></div>
-        <div class="dojo-item"><img src="eastbourne.jpg" alt="Eastbourne"><span class="dojo-name">Eastbourne</span></div>
         <div class="dojo-item"><img src="folkstone.jpg" alt="Folkestone"><span class="dojo-name">Folkestone</span></div>
-        <div class="dojo-item"><img src="hastings_bexhill.jpg" alt="Hastings & Bexhill"><span class="dojo-name">Hastings & Bexhill</span></div>
         <div class="dojo-item"><img src="tunbridge_wells.jpg" alt="Tunbridge Wells"><span class="dojo-name">Tunbridge Wells</span></div>
     </div>
 
     <section id="kaizen">
         <h2 class="section-title">THE KAIZEN TEAM</h2>
-        <div class="kaizen-grid">
+        <p style="text-align: center; max-width: 700px; margin: 0 auto; color: #555;">
+            "Kaizen" (改善) means continuous improvement. This proposed structure ensures that every suggestion is analyzed, authorised, and implemented effectively.
+        </p>
+        
+        <div class="kaizen-container">
             <div class="kaizen-card">
-                <i class="fas fa-user-tie" style="font-size:3rem; color:#ccc; margin-bottom:10px;"></i>
-                <div class="k-role">Founder & Chief Instructor</div>
-                <div class="k-name">Richard Canton</div>
-            </div>
-            <div class="kaizen-card">
-                <i class="fas fa-shield-heart" style="font-size:3rem; color:#ccc; margin-bottom:10px;"></i>
-                <div class="k-role">Welfare & Safeguarding</div>
-                <div class="k-name">Claire Canton</div>
-            </div>
-            <div class="kaizen-card">
-                <i class="fas fa-user-ninja" style="font-size:3rem; color:#ccc; margin-bottom:10px;"></i>
-                <div class="k-role">Head Karate Instructor</div>
-                <div class="k-name">Denise Hardy</div>
-            </div>
-            <div class="kaizen-card" style="border-top-color: var(--canton-red);">
-                <i class="fas fa-lightbulb" style="font-size:3rem; color:var(--canton-red); margin-bottom:10px;"></i>
+                <i class="fas fa-brain k-icon"></i>
                 <div class="k-role">Innovation Lead</div>
-                <div class="k-name">Assoc. Prof. Dr Cetin Karakaya</div>
+                <div class="k-name">Assoc. Prof. Dr. Cetin Karakaya</div>
+                <p style="font-size:0.85rem; color:#666;">Data Analysis, Reporting & System Maintenance</p>
+            </div>
+
+            <div class="kaizen-card" style="border-top-color: var(--canton-red);">
+                <i class="fas fa-gavel k-icon"></i>
+                <div class="k-role">Executive Sponsor</div>
+                <div class="k-name">Shihan Kigen (Richard Canton)</div>
+                <p style="font-size:0.85rem; color:#666;">Final Approval & Strategic Direction</p>
+            </div>
+
+            <div class="kaizen-card">
+                <i class="fas fa-fist-raised k-icon"></i>
+                <div class="k-role">Operational Lead</div>
+                <div class="k-name">Doshi Luca Hale-Stretton</div>
+                <p style="font-size:0.85rem; color:#666;">Dojo Implementation & Instructor Coordination</p>
+            </div>
+
+            <div class="kaizen-card">
+                <i class="fas fa-shield-alt k-icon"></i>
+                <div class="k-role">Welfare Officer</div>
+                <div class="k-name">Claire Canton</div>
+                <p style="font-size:0.85rem; color:#666;">Safeguarding Compliance & Oversight</p>
             </div>
         </div>
     </section>
 
-    <section id="values" style="background-color: white;">
-        <h2 class="section-title">BUILT ON OUR CORE VALUES</h2>
-        <div class="values-grid">
-            <div class="value-card">
-                <i class="fas fa-fire value-icon"></i>
-                <h3>SPIRIT</h3>
-                <p>We never give up, we never give in, we will always do our best.</p>
-            </div>
-            <div class="value-card">
-                <i class="fas fa-star value-icon"></i>
-                <h3>QUALITY</h3>
-                <p>Classes are engaging, evolving, applicable and inclusive.</p>
-            </div>
-            <div class="value-card">
-                <i class="fas fa-hand-holding-heart value-icon"></i>
-                <h3>SERVICE</h3>
-                <p>We will offer a premium experience through premium customer service.</p>
-            </div>
-            <div class="value-card">
-                <i class="fas fa-fist-raised value-icon"></i>
-                <h3>DEDICATION</h3>
-                <p>Our aim is to inspire others to become dedicated to their chosen sport.</p>
-            </div>
-            <div class="value-card">
-                <i class="fas fa-smile-beam value-icon"></i>
-                <h3>FUN</h3>
-                <p>We ensure you enjoy the journey, a smile on your face is what we want.</p>
-            </div>
-        </div>
-    </section>
-
-    <section id="strategy">
-        <h2 class="section-title">STRATEGIC OBJECTIVES & VISION</h2>
-        <div class="strategy-grid">
-            <div class="strategy-box">
-                <h3 style="color: var(--canton-red);"><i class="fas fa-exclamation-triangle"></i> Current Challenges</h3>
-                <ul class="strategy-list" style="list-style: none; padding:0;">
-                    <li><i class="fas fa-times-circle" style="color:red;"></i> <strong>Manual Processes:</strong> Paper forms for tournaments cause data loss.</li>
-                    <li><i class="fas fa-times-circle" style="color:red;"></i> <strong>Uniform Issues:</strong> Stock issues and fitting problems with current Gi.</li>
-                    <li><i class="fas fa-times-circle" style="color:red;"></i> <strong>Hidden Churn:</strong> Students leaving due to financial hardship without asking for help.</li>
-                </ul>
-            </div>
+    <section id="strategy" style="background-color: #f9f9f9;">
+        <h2 class="section-title">THE VISUAL IDENTITY</h2>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px;">
             
-            <div class="strategy-box">
-                <h3 style="color: var(--canton-navy);"><i class="fas fa-check-circle"></i> Proposed Solutions</h3>
-                <ul class="strategy-list" style="list-style: none; padding:0;">
-                    <li><i class="fas fa-tag" style="color:green;"></i> <strong>The Patch Model:</strong> Use the official Dragon Logo as a high-quality velcro patch. Students can buy WKF approved gear and attach the club identity easily.</li>
-                    <li><i class="fas fa-mobile-alt" style="color:green;"></i> <strong>Digital Voice:</strong> A discreet channel for financial or safeguarding support.</li>
-                    <li><i class="fas fa-bullhorn" style="color:green;"></i> <strong>Centralised Feedback:</strong> Direct line to management.</li>
+            <div class="patch-display">
+                <h3 style="color: var(--canton-navy); margin-top:0;"><i class="fas fa-tag"></i> Official Member Patch</h3>
+                <p>Designed to be velcro-backed for easy application to Gi collars or Kit Bags.</p>
+                
+                <div class="patch-preview">
+                    <div class="patch patch-round">
+                        <div class="p-voice">VOICE</div>
+                        <div class="p-of">of</div>
+                        <div class="p-canton">CANTON</div>
+                    </div>
+                    <div class="patch patch-square">
+                        <div class="p-voice">VOICE</div>
+                        <div class="p-of">of</div>
+                        <div class="p-canton">CANTON</div>
+                    </div>
+                </div>
+                <p style="font-size: 0.8rem; color: #888; margin-top:15px;">*Digital rendering of embroidered texture</p>
+            </div>
+
+            <div style="background: white; padding: 40px; border-radius: 10px; box-shadow: 0 5px 20px rgba(0,0,0,0.05); display:flex; flex-direction: column; justify-content: center;">
+                <h3 style="color: var(--canton-navy);"><i class="fas fa-tasks"></i> Why "Kaizen"?</h3>
+                <p style="line-height: 1.6; color: #555;">
+                    In Martial Arts, we strive for perfection in every technique. Our club management should be no different. 
+                    The <strong>Voice of Canton</strong> portal is the digital dojo for our operations.
+                </p>
+                <ul style="margin-top: 20px; line-height: 2;">
+                    <li><i class="fas fa-check" style="color: var(--canton-red);"></i> <strong>Listen:</strong> Centralised feedback.</li>
+                    <li><i class="fas fa-check" style="color: var(--canton-red);"></i> <strong>Improve:</strong> Data-driven decisions.</li>
+                    <li><i class="fas fa-check" style="color: var(--canton-red);"></i> <strong>Empower:</strong> Giving students a voice.</li>
                 </ul>
             </div>
-        </div>
-
-        <div style="text-align: center; margin-top: 50px;">
-            <h4>PROPOSED OFFICIAL MEMBER PATCHES (Velcro Backed)</h4>
-            <div class="patch-container">
-                <div class="patch patch-round" title="For Gi Collar"></div>
-                <div class="patch patch-square" title="For Kit Bags"></div>
-            </div>
-            <p style="font-size: 0.8rem; color: #888; margin-top: 15px;">*Utilising the current official Club Dragon Logo for maximum brand identity.</p>
         </div>
     </section>
 
     <section id="demo">
-        <h2 class="section-title">INTERACTIVE MEMBER PORTAL (DEMO)</h2>
+        <h2 class="section-title">INTERACTIVE PORTAL DEMO</h2>
         <div class="demo-container">
             <div class="form-side">
                 <form id="innovationForm" onsubmit="handleForm(event)">
-                    <label>Select Your Dojo</label>
+                    <label>Select Dojo</label>
                     <select id="dojoSelect">
-                        <option value="Hastings">Hastings</option>
-                        <option value="Bexhill">Bexhill</option>
+                        <option value="Hastings">Hastings & Bexhill</option>
                         <option value="Eastbourne">Eastbourne</option>
                         <option value="Ashford">Ashford</option>
                         <option value="Canterbury">Canterbury</option>
-                        <option value="Folkestone">Folkestone</option>
                         <option value="Tunbridge Wells">Tunbridge Wells</option>
                     </select>
 
-                    <label>Your Details (Optional)</label>
-                    <input type="text" placeholder="Name (Optional)">
-                    <input type="email" placeholder="Email (Recommended for updates)">
-
-                    <label>Category / Topic</label>
+                    <label>Category</label>
                     <select id="categorySelect" onchange="updateRecipient()">
-                        <option value="" disabled selected>Please select...</option>
+                        <option value="" disabled selected>Select a topic...</option>
                         <option value="finance">💰 Financial Hardship (Confidential)</option>
-                        <option value="safeguarding">🛡️ Safeguarding (Confidential)</option>
-                        <option value="gear">🥋 Equipment / Uniform Feedback</option>
-                        <option value="idea">💡 Innovation / Kaizen Idea</option>
-                        <option value="tournament">🏆 Tournament Registration</option>
-                        <option value="complaint">⚠️ Complaint / Issue</option>
+                        <option value="safeguarding">🛡️ Safeguarding Issue</option>
+                        <option value="idea">💡 Kaizen Idea / Suggestion</option>
+                        <option value="gear">🥋 Equipment Feedback</option>
                     </select>
 
-                    <label>Recipient (Auto-Routed)</label>
+                    <label>Recipient (Auto-Routed Logic)</label>
                     <select id="recipientSelect">
-                        <option value="Dojo Instructor">Dojo Instructor (Default)</option>
-                        <option value="Richard Canton">Richard Canton</option>
-                        <option value="Denise Hardy">Denise Hardy</option>
-                        <option value="Claire Canton">Claire Canton</option>
-                        <option value="Kaizen Team">Kaizen Team</option>
+                        <option value="office">General Office</option>
+                        <option value="Denise Hardy">Denise Hardy (Finance)</option>
+                        <option value="Claire Canton">Claire Canton (Safeguarding)</option>
+                        <option value="Kaizen Team">Kaizen Team (Review Board)</option>
                     </select>
-                    <div id="lockMessage" style="font-size: 0.85rem; color: var(--canton-red); display:none; margin-bottom: 15px; background: #ffe6e6; padding: 8px; border-radius: 4px;"></div>
+                    <div id="lockMessage" style="font-size: 0.85rem; color: var(--canton-red); display:none; margin-bottom: 15px; background: #ffe6e6; padding: 5px; border-radius: 4px;"></div>
 
                     <label>Message</label>
-                    <textarea id="messageBody" rows="3" required></textarea>
-                    
-                    <div style="margin-bottom: 20px;">
-                        <input type="checkbox" id="anon" style="width: auto;"> 
-                        <label for="anon" style="display:inline; font-weight:normal;">Submit Anonymously</label>
-                    </div>
-
-                    <button type="submit" class="btn" style="width: 100%; margin-top: 0;">SUBMIT</button>
+                    <textarea id="messageBody" rows="3" placeholder="Enter details..." required></textarea>
+                    <button type="submit" class="btn" style="width: 100%; margin-top: 10px;">SUBMIT TO KAIZEN TEAM</button>
                 </form>
                 
-                <div id="aiResponse" style="background: #e3f2fd; padding: 20px; margin-top: 20px; display:none; border-left: 5px solid var(--canton-navy); border-radius: 5px;">
-                    <h4 style="margin:0 0 10px 0; color: var(--canton-navy);">✅ Ticket Created</h4>
-                    <p id="responseText" style="font-size: 0.95rem; margin: 0;"></p>
-                    <small style="display:block; margin-top:10px; color:#666;">A copy has been sent to your email.</small>
+                <div id="aiResponse" style="background: #e3f2fd; padding: 15px; margin-top: 15px; display:none; border-left: 4px solid var(--canton-navy); border-radius: 4px;">
+                    <h4 id="responseTitle" style="margin:0; color: var(--canton-navy);"></h4>
+                    <p id="responseText" style="font-size: 0.9rem; margin: 5px 0;"></p>
                 </div>
             </div>
 
             <div class="visual-side">
-                <h3 style="text-align: center;">LIVE ANALYTICS</h3>
+                <h3 style="text-align: center;">LIVE DATA (CONCEPT)</h3>
                 <div style="height: 250px;">
                     <canvas id="medalChart"></canvas>
                 </div>
@@ -356,24 +300,14 @@
 
     <section id="status">
         <div class="status-box">
-            <h3><i class="fas fa-clipboard-list"></i> PROJECT STATUS: CONCEPT PHASE</h3>
-            <p><strong>Next Step:</strong> Kick-off Meeting to define technical requirements and protocols.</p>
-        </div>
-        
-        <div class="pilot-box">
-            <h3 style="color: var(--canton-red); margin:0; font-size: 2rem;">1-MONTH PILOT OFFER</h3>
-            <p style="font-size: 1.2rem; margin: 15px 0;">Managed by <strong>INNOVATION LEAD</strong> Assoc. Prof. Dr Cetin Karakaya</p>
-            <div style="font-size: 1rem; opacity: 0.9;">
-                <span style="margin: 0 10px;"><i class="fas fa-check"></i> Zero Cost</span>
-                <span style="margin: 0 10px;"><i class="fas fa-link"></i> Integrated via Link</span>
-                <span style="margin: 0 10px;"><i class="fas fa-undo"></i> Cancel Anytime</span>
-            </div>
+            <h3><i class="fas fa-clipboard-list"></i> NEXT STEPS: KICK-OFF MEETING</h3>
+            <p>To discuss feasibility, privacy protocols, and the scope of the 1-Month Pilot.</p>
         </div>
     </section>
 
     <footer>
-        <p style="font-size: 1.2rem; color: white; font-weight: bold;">&copy; 2026 Voice of Canton</p>
-        <p style="opacity: 0.7;">Developed by Assoc. Prof. Dr Cetin Karakaya</p>
+        <p style="font-size: 1.1rem; color: white;">&copy; 2026 Voice of Canton Proposal.</p>
+        <p style="opacity: 0.7;">Developed by <strong>Assoc. Prof. Dr. Cetin Karakaya</strong></p>
     </footer>
 
     <script>
@@ -381,22 +315,18 @@
             const cat = document.getElementById('categorySelect').value;
             const rec = document.getElementById('recipientSelect');
             const msg = document.getElementById('lockMessage');
-            
-            // Reset Defaults
-            rec.disabled = false; 
-            msg.style.display = 'none';
+            rec.disabled = false; msg.style.display = 'none';
 
             if(cat === 'finance') { 
-                rec.value = "Denise Hardy"; 
-                rec.disabled = true; 
-                msg.style.display = 'block'; 
-                msg.innerHTML = "<i class='fas fa-lock'></i> Locked to <strong>Denise Hardy</strong> (Confidential)."; 
+                rec.value = "Denise Hardy"; rec.disabled = true; msg.style.display = 'block'; 
+                msg.innerHTML = "<i class='fas fa-lock'></i> Locked to Admin & Finance."; 
             }
             else if(cat === 'safeguarding') { 
-                rec.value = "Claire Canton"; 
-                rec.disabled = true; 
-                msg.style.display = 'block'; 
-                msg.innerHTML = "<i class='fas fa-user-shield'></i> Locked to <strong>Claire Canton</strong> (Confidential)."; 
+                rec.value = "Claire Canton"; rec.disabled = true; msg.style.display = 'block'; 
+                msg.innerHTML = "<i class='fas fa-user-shield'></i> Locked to Safeguarding Officer."; 
+            }
+            else if(cat === 'idea') {
+                rec.value = "Kaizen Team";
             }
         }
 
@@ -404,40 +334,24 @@
             e.preventDefault();
             const btn = e.target.querySelector('button');
             const box = document.getElementById('aiResponse');
+            const title = document.getElementById('responseTitle');
             const txt = document.getElementById('responseText');
-            const anon = document.getElementById('anon').checked;
             
-            btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> PROCESSING...';
-            
+            btn.innerHTML = 'PROCESSING...';
             setTimeout(() => {
                 btn.innerHTML = 'SUBMITTED';
-                btn.style.backgroundColor = '#28a745';
                 box.style.display = 'block';
-                
-                const ref = "CNTN-2026-" + Math.floor(1000 + Math.random() * 9000);
-                let senderInfo = anon ? "Anonymous Sender" : "User";
-                
-                txt.innerHTML = `<strong>Ticket Ref: #${ref}</strong><br>Your request has been securely logged and routed to the recipient.`;
-                
-                // 3 Saniye sonra reset
-                setTimeout(() => {
-                    btn.innerHTML = 'SUBMIT';
-                    btn.style.backgroundColor = '#E60000';
-                }, 3000);
+                title.innerText = "✅ Logged for Kaizen Review";
+                txt.innerHTML = "Your input has been securely sent to the selected recipient.";
             }, 1000);
         }
 
-        // Chart Data
         document.addEventListener('DOMContentLoaded', function() {
             new Chart(document.getElementById('medalChart'), {
                 type: 'bar',
                 data: {
                     labels: ['Hastings', 'Ashford', 'Eastbourne', 'Canterbury', 'Folkestone'],
-                    datasets: [{ 
-                        label: 'Total Medals', 
-                        data: [39, 35, 30, 18, 17], 
-                        backgroundColor: '#E60000' 
-                    }]
+                    datasets: [{ label: 'Total Medals', data: [39, 35, 30, 18, 17], backgroundColor: '#E60000' }]
                 },
                 options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false } } }
             });
